@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Appliances</title>
+</head>
+<body>
+    <h1>Appliances</h1>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Type</th>
+                <th>Brand</th>
+                <th>Model Number</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for appliance in appliances %}
+            <tr>
+                <td>{{ appliance.name }}</td>
+                <td>{{ appliance.type }}</td>
+                <td>{{ appliance.brand }}</td>
+                <td>{{ appliance.model_number }}</td>
+                <td>
+                    <a href="{% url 'edit_appliance' appliance.id %}" class="btn btn-primary">Edit</a>
+                    <a href="{% url 'delete_appliance' appliance.id %}" class="btn btn-danger">Delete</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <a href="{% url 'add_appliance' %}" class="btn btn-success">Add Appliance</a>
+</body>
+</html>

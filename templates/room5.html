@@ -1,0 +1,42 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Room 1</title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+<body>
+    <div class="room">
+        <h2>Room 5 - Personal</h2>
+
+        <div class="background-image"></div>
+
+        <div class="appliances">
+            <h3>Appliances:</h3>
+            <ul>
+                <li>Appliance 1</li>
+                <li>Appliance 2</li>
+                <li>Appliance 3</li>
+                <li>Appliance 4</li>
+            </ul>
+        </div>
+
+        <div class="chart-container">
+            <!-- Add your chart here -->
+        </div>
+<div class="navigation">
+    <button><img src="{% static 'fan_icon.png' %}" alt="Fan"> Fan</button>
+    <button><img src="{% static 'light_icon.png' %}" alt="Light"> Light</button>
+    <button><img src="{% static 'ac_icon.png' %}" alt="AC"> AC</button>
+    <button><img src="{% static 'oven_icon.png' %}" alt="Oven"> Oven</button>
+    <button><img src="{% static 'tv_icon.png' %}" alt="TV"> TV</button>
+    <button><img src="{% static 'fridge_icon.png' %}" alt="Fridge"> Fridge</button>
+    <button><img src="{% static 'washer_icon.png' %}" alt="Washer"> Washer</button>
+    <!-- Add more buttons for other appliances -->
+</div>
+
+    </div>
+</body>
+</html>

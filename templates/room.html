@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Room</title>
+    <!-- Link to Swiper CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <!-- Link to your custom CSS -->
+    <style>
+        /* styles.css */
+
+/* Style for the room container */
+.room {
+    padding: 20px;
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Style for the room title */
+.room h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    text-align: center;
+}
+
+/* Style for the background image */
+.background-image {
+    background-image: url('/path/to/background-image.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 300px; /* Adjust height as needed */
+    margin-bottom: 20px;
+}
+
+/* Style for the appliance list */
+.appliances ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.appliances ul li {
+    margin-bottom: 10px;
+}
+
+/* Style for the chart container */
+.chart-container {
+    margin-bottom: 20px;
+}
+
+/* Style for the navigation buttons */
+.navigation {
+    text-align: center;
+}
+
+.navigation button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.navigation button img {
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+}
+
+    </style>
+</head>
+<body>
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <!-- Include each room's HTML file as a slide -->
+            <div class="swiper-slide">
+                {% include 'room1.html' %}
+            </div>
+            <div class="swiper-slide">
+                {% include 'room2.html' %}
+            </div>
+            <!-- Add other room HTML files as swiper slides -->
+        </div>
+        <!-- Add pagination -->
+        <div class="swiper-pagination"></div>
+    </div>
+
+    <!-- Link to Swiper JS -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script>
+        // Initialize Swiper
+        var swiper = new Swiper('.swiper-container', {
+            // Optional parameters
+            direction: 'horizontal',
+            loop: true,
+            pagination: {
+                el: '.swiper-pagination',
+            },
+        });
+    </script>
+</body>
+</html>

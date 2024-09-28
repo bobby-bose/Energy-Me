@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profiles</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1>User Profiles</h1>
+        <div class="table-responsive">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Username</th>
+                        <th>Address</th>
+                        <th>Consumer Number</th>
+                        <th>Phone Number</th>
+                        <th>Email</th>
+                        <th>Date of Birth</th>
+                        <th>Gender</th>
+                        <th>Profile Picture</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for user_profile in user_profiles %}
+                    <tr>
+                        <td>{{ user_profile.user.username }}</td>
+                        <td>{{ user_profile.address }}</td>
+                        <td>{{ user_profile.consumer_number }}</td>
+                        <td>{{ user_profile.phone_number }}</td>
+                        <td>{{ user_profile.email }}</td>
+                        <td>{{ user_profile.date_of_birth }}</td>
+                        <td>{{ user_profile.gender }}</td>
+                        
+                        <td>
+    <a href="{% url 'edit_profile' user_profile.id %}" class="btn btn-primary">Edit</a>
+    <a href="{% url 'delete_profile' user_profile.id %}" class="btn btn-danger">Delete</a>
+</td>
+
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+</head>
+<body>
+    <h1>User Profile</h1>
+    <p>Address: {{ user_profile.address }}</p>
+    <p>Consumer Number: {{ user_profile.consumer_number }}</p>
+    <p>Phone Number: {{ user_profile.phone_number }}</p>
+    <p>Email: {{ user_profile.email }}</p>
+    <p>Date of Birth: {{ user_profile.date_of_birth }}</p>
+    <p>Gender: {{ user_profile.gender }}</p>
+    {% if user_profile.profile_picture %}
+    <img src="{{ user_profile.profile_picture.url }}" alt="Profile Picture">
+    {% endif %}
+</body>
+</html>
